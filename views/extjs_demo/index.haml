@@ -1,0 +1,124 @@
+/ Do NOT put any DOCTYPE here unless you want problems in IEs.
+%html
+  %head
+    %meta{:content => "text/html; charset=iso-8859-1", "http-equiv" => "Content-Type"}
+      %title Ext.js - Desktop Sample App
+      %meta{:charset => "UTF-8"}
+        / extjs is a javascript framework you can use to create professional graphical web user interface and AJAX web application
+        / This must come BEFORE javascript includes!
+        / Own css styles
+        %link{:href => "css/common.css", :rel => "stylesheet"}
+          / Ext.js css styles
+          %link{:href => "extjs/css/ext-all.css", :rel => "stylesheet"}/
+          %link{:href => "extjs/css/desktop.css", :rel => "stylesheet"}/
+          / Theme includes
+          %link{:href => "extjs/css/xtheme-gray.css", :itle => "gray", :rel => "stylesheet"}/
+          %link{:href => "extjs/css/xtheme-access.css", :rel => "stylesheet", :title => "access"}/
+          %link{:href => "extjs/css/xtheme-2brave.css", :rel => "stylesheet", :title => "2brave"}/
+          %link{:href => "extjs/css/xtheme-winglass.css", :rel => "stylesheet", :title => "winglass"}/
+          %link{:href => "extjs/css/xtheme-win7.css", :rel => "stylesheet", :title => "win7"}/
+          / jQuery
+          %script{:src => "js/core/jquery.js"}
+          %script{:src => "js/core/jquery-ui.js"}
+          / Ext.js Core
+          / First of javascript includes must be an adapter
+          %script{:src => "extjs/js/ext-jquery-adapter.js"}
+          / You can use ext-base.js
+          / ...then you need the Ext itself, either debug or production 'ext-all.js' version.
+          %script{:src => "extjs/js/ext-all-debug.js"}
+          / Ext.js common desktop UI
+          %script{:src => "extjs/js/StartMenu.js"}
+          %script{:src => "extjs/js/TaskBar.js"}
+          %script{:src => "extjs/js/Desktop.js"}
+          %script{:src => "extjs/js/App.js"}
+          %script{:src => "extjs/js/Module.js"}
+          / Ext.js desktop config
+          %script{:src => "extjs/js/sample.js"}
+          / Ext.js demo
+          %script{:src => "extjs/js/styleswitcher.js"}
+          %script{:src => "extjs/js/extjs_demo.js"}
+          / Own JavaScripts
+          %script{:src => "js/core/base.js"}
+          %script{:src => "js/core/base_ex.js"}
+          %script{:src => "js/core/underscore.js"}
+          %script{:src => "js/core/backbone.js"}
+          %script{:src => "js/controllers/cmn.js"}
+  %body{:scroll => "no"}
+    / Ext.js desktop
+    #x-desktop
+      %section
+        / Header menu
+        #header
+          %header
+            %nav
+              %ul
+                %li
+                  %a{:href => "/"}
+                    .title.menu_home
+                      %img{:src => "images/ico-home.png"}/
+                      %em Home
+                %li
+                  %a{:href => "/news"}
+                    .title.article_all_news.menu_all_news.menu_add_news.menu_html_news.menu_css_news.menu_other_news
+                      %img{:src => "images/ico-news.png"}/
+                      %em News
+                %li
+                  %a{:href => "/drag_me"}
+                    .title.menu_skeleton
+                      %img{:src => "images/ico-skeleton.png"}/
+                      %em Skeleton
+                %li
+                  %a{:href => "extjs_demo#desktop"}
+                    .title.menu_extjs.curr_menu
+                      %img{:src => "images/ico-extjs.png"}/
+                      %em Ext&nbsp;js
+        %form#styleswitcher
+          %label{:for => "styleswitcher_select"} Choose Theme:
+          %select#styleswitcher_select{:name => "styleswitcher_select"}
+            %option{:selected => "true", :value => "win7"} Win7
+            %option{:value => "2brave"} Ukraine 4ever
+            %option{:value => "gray"} Gray
+            %option{:value => "access"} Accessibility
+            %option{:value => "winglass"} Win Glass
+      / Ext.js Shortcuts
+      %dl#x-shortcuts
+        / Ext.js test demo
+        %dt#showNews_win
+          %a{:href => "#", :onclick => "showNews_win();"}
+            %img{:src => "images/ico-news.png"}/
+            %div Show News
+        %dt#addNews_win
+          %a{:href => "#", :onclick => "addNews_win();"}
+            %img{:src => "images/ico-add_it.png"}/
+            %div Add News
+        %dt#dragndrop_win
+          %a{:href => "#", :onclick => "dragNdrop_win();"}
+            %img{:src => "images/ico-skeleton.png"}/
+            %div Drag Me
+        %dt#letsRock_win
+          %a{:href => "#", :onclick => "letsRock_win();"}
+            %img{:src => "images/ico-lets_rock.png"}/
+            %div Let`s Rock
+        %dt#msgbox-demo
+          %a{:href => "#", :onclick => "msgbox_demo();"}
+            %img{:src => "extjs/images/ico_msgbox.png"}/
+            %div Msgbox Demo
+        %dt#grid-win-shortcut
+          %a{:href => "#"}
+            %img{:src => "extjs/images/s.gif"}/
+            %div Grid Window
+        %dt#acc-win-shortcut
+          %a{:href => "#"}
+            %img{:src => "extjs/images/s.gif"}/
+            %div Accordion Window
+    / Ext.js taskbar
+    #ux-taskbar
+      #ux-taskbar-start
+      #ux-taskbuttons-panel
+      .x-clear
+:javascript
+  // TODO: generate template
+  // open DB anf initialize tables
+    dbHW.openDB("MWTT2", "1.0", "DB for Modern Web Technilogies Training", 5*1024*1024);
+    dbHW.initializeTables();
+    window.newsModel = new ModelNews ();

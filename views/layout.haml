@@ -1,0 +1,59 @@
+!!!
+%html
+  %head
+    %title Home Works of WebUI course
+    %meta{:charset => "UTF-8"}
+      %script{:src => "/js/core/base.js"}
+      %script{:src => "/js/core/base_ex.js"}
+      %script{:src => "/js/core/jquery.js"}
+      %script{:src => "/js/core/jquery-ui.js"}
+      %script{:src => "/js/controllers/cmn.js"}
+      %link{:href => "/css/common.css", :rel => "stylesheet"}
+  %body
+    %section
+      / Header menu
+      #header
+        %header
+          %nav
+            %ul
+              %li
+                %a{:href => "/", :name => "head"}
+                  .title.menu_home
+                    %img{:src => "/images/ico-home.png"}/
+                    %em Home
+              %li
+                %a{:href => "/news"}
+                  .title.article_all_news.menu_all_news.menu_add_news.menu_html_news.menu_css_news.menu_other_news
+                    %img{:src => "/images/ico-news.png"}/
+                    %em News
+              %li
+                %a{:href => "/drag_me"}
+                  .title.menu_skeleton
+                    %img{:src => "/images/ico-skeleton.png"}/
+                    %em Skeleton
+              %li
+                %a{:href => "/extjs_demo#desktop"}
+                  .title.menu_extjs
+                    %img{:src => "/images/ico-extjs.png"}/
+                    %em Ext&nbsp;js
+    %section#page
+      / Logo line
+      %section#intro
+        .line_up
+        #logo_intro
+          %img{:src => "/images/logo_intro.png"}/
+        %header
+          %hgroup
+            %span.h1 Presentation of
+            %span.h2 HTML5,
+            %span.h2 CSS3,
+            %span.h2 JS,
+            %span.h2 jQuery.
+        .line_down
+        =yield
+    / footer
+    %footer
+      .line_down
+      %p &copy; 2011 - localhost.com
+      %a.send_mail{:href => "mailto:alex.mehovov@gmail.com", :title => "send mail to me"}
+      %a.up{:href => "#head", :title => "go up"}

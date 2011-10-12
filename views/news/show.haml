@@ -1,0 +1,43 @@
+
+/ News aside
+%aside.article_all_news.article_add_news.article_html_news.article_css_news.article_other_news
+  %div
+    %ul
+      %li
+        %a{:href => "/news"}
+          .aside_all_news
+            %span.h4 * All News
+      %li
+        %a{:href => "/news/add"}
+          .aside_add_news
+            %span.h4 + Add News
+/ Common content
+%section#content
+  %article.article_all_news
+    %header.red_title
+      %img.article-left{:src => "/images/nav-left.png"}/
+      %img.article-right{:src => "/images/nav-right.png"}/
+      %h3
+        = @@show_news[:title]
+        .date
+          = @@show_news[:date]
+      .article_content.two_column
+        %p
+          = @@show_news[:content]
+      %span.post_category
+        = @@show_news[:cat_id]
+      %span.post_author
+        %a{:href => "#"}
+        = @@show_news[:author]
+      %span.post_tags
+        %a{:href => "#"} TODO: add tags
+      %span.post_comments
+        = @@show_news[:id]
+      %a{:href => "/news"}
+        %span.read_it all news
+      %a{:href => "/news/edit/#{@@show_news[:id]}"}
+        %span.edit_it
+      %a{:href => "/news/delete/#{@@show_news[:id]}"}
+        %span.delete_it
+:javascript
+    show_menu("all_news");

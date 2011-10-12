@@ -1,0 +1,58 @@
+/ News aside
+%aside.article_all_news.article_add_news.article_html_news.article_css_news.article_other_news
+  %div
+    %ul
+      %li
+        %a{:href => "/news"}
+          .aside_all_news
+            %span.h4 * All News
+      %li
+        %a{:href => "/news/add"}
+          .aside_add_news
+            %span.h4 + Add News
+/ Common content
+%section#content
+  %article.article_edit_news
+    %header.title
+      %h3 Edit News
+    .article_content
+      %form#form_edit_news{:method => 'post'}
+        %fieldset
+          %ol
+            %li
+              %label{:for => "author"} Name
+              %input#author{:name => "author", :pattern => ".{4,}", :placeholder => "Your name", :required => "", :value => "#{@@edit_news[:author]}", :type => "text"}/
+              %p.validation01
+                %span.invalid At least 4 characters
+                %span.valid nice to meet you
+            %li
+              %label{:for => "title"} Title
+              %input#title{:name => "title", :pattern => ".{6,}", :placeholder => "News title", :required => "", :value => "#{@@edit_news[:title]}",  :type => "text"}/
+              %p.validation01
+                %span.invalid At least 6 characters
+                %span.valid cool ;)
+            %li
+              %label{:for => "cat_id"} Category
+              %select#cat_id{:name => "cat_id"}
+                %option{:selected => ""} Other
+                %option HTML
+                %option CSS
+                %option JavaScript
+                %option Ruby
+            %li
+              %label{:for => "tags"} Tags
+              %input#tags{:name => "tags", :placeholder => "e.g. html, css", :required => "", :value => "Ruby",  :type => "text"}/
+              %p.validation01
+                %span.invalid Separator: ","
+                %span.valid nice :)
+            %li
+              %label{:for => "news_content"} Content
+              %textarea#news_content{:name => "content", :placeholder => "Your news", :required => "", :rows => "10"}
+                = @@edit_news[:content]
+              %p.validation01
+                %span.invalid Type your news
+                %span.valid mmm.. interesting
+        %span.edit_news
+          %input{:type => "submit", :value => "edit"}
+
+

@@ -1,0 +1,27 @@
+/ Skeleton aside
+%aside.article_skeleton.article_lets_rock
+  %div
+    %ul
+      %li
+        %a{:href => "/drag_me"}
+          .aside_skeleton
+            %span.h4 * Drop Me
+      %li
+        %a{:href => "/lets_rock"}
+          .aside_lets_rock
+            %span.h4 * Let`s Rock
+/ Common content
+%section#content
+  / Article skeleton page
+  %article.article_skeleton.article_lets_rock
+    %header.title
+      %h3 Drag`n`Drop and CSS3 animate demonstration
+    / Container gor Skeleton, Frank and Zombie
+    #skeletons_container
+    #lets_rock
+      #rock_mp3
+      / Output for additional info
+      #res
+    #res1
+:javascript
+  drag_n_drop ();

@@ -1,0 +1,42 @@
+/ Common content
+%section#content
+  / Article home page
+  %article.article_home
+    %header.red_title
+      %img.article-left{:src => "/images/nav-left.png"}/
+      %img.article-right{:src => "/images/nav-right.png"}/
+      %h3 Hello there!
+    .article_content
+      %p
+        %span.h5
+          It`s
+          %span.h3 HOME
+          page !
+      %p
+        %span.h5 There is home works of
+        %span.h6 Web UI
+        %span.h5 course.
+      %br
+        .h7
+          %p
+            It`s training projects of WebUI coursers in
+            %a{:href => "http://softserve.ua"} SoftServe
+            IT company.
+          %p
+            Using technologies / plugins / libraries:
+            %ul
+              %li Ruby
+              %li Sinatra
+              %li Sequel (temp)
+              %li HTML5
+              %li CSS3
+              %li JavaScript
+              %li jQuery
+              %li jQuery Drag`n`Drop
+              %li CSS3 animation
+              %li LocalStorage
+              %li Google Closure library (base.js)
+              %li Ext.js
+          %br
+:javascript
+  show_menu("home");

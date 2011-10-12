@@ -1,0 +1,23 @@
+h1. Modern Web Technologies Training on Ruby
+
+Implementation MVC on Sinatra.
+
+It`s training projects of WebUI coursers in "SoftServe":http://softserve.ua IT company.
+
+Using technologies / plugins / libraries:
+* Sinatra
+* Sequel
+* sqlite
+* haml
+* HTML5
+* CSS3
+* JavaScript
+* jQuery
+* jQuery Drag`n`Drop
+* CSS3 animation
+* LocalStorage
+* Google Closure library (base.js)
+* Ext.js
+* backbone.js
+* underscore.js
+
